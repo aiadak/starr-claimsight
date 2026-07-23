@@ -1,0 +1,39 @@
+# Starr ClaimSight — Deployment Package
+
+A self-contained static web app: one HTML file, no backend, no build step.
+Deploy to Vercel in ~2 minutes.
+
+## What's in this folder
+- `index.html` .............. the entire app (double-click to preview locally too)
+- `vercel.json` ............. optional static-site config (safe to keep)
+- `sample-data/` ............ 33 demo claims (CSV + JSON) to upload inside the app
+- `README.md` ............... this file
+
+## Deploy to Vercel
+
+### Option 1 — Vercel CLI (fastest)
+1. Install Node.js from https://nodejs.org (if you don't have it).
+2. In a terminal:  `npm i -g vercel`
+3. `cd` into this folder, then run:  `vercel`
+   - Log in when prompted and accept the defaults:
+     Framework preset = Other, Build command = none, Output directory = ./
+4. Vercel prints a preview URL. For the shareable production URL:  `vercel --prod`
+
+### Option 2 — GitHub + Vercel (no command line)
+1. Create a new repository on https://github.com and upload the contents of this folder.
+2. Go to https://vercel.com  ->  Add New  ->  Project  ->  Import your repo.
+3. Framework preset = Other. Leave Build & Output settings empty. Click Deploy.
+4. You get a https://<name>.vercel.app URL.
+
+### Settings that matter (don't overthink these)
+- No build command, no framework, no environment variables.
+- Root / output directory = the folder root, where index.html lives.
+
+## Using it in the demo
+Open the URL  ->  Catastrophic Claims  ->  "Load demo dataset" (instant),
+or drag `sample-data/claims_synthetic.csv` onto the upload box.
+NOTE: file upload works on the deployed URL. It does NOT work inside in-app previews.
+
+## Next step (when ready)
+Swap the in-browser classifier for a call to your cloud claims API —
+that's a single-function change inside index.html. 
